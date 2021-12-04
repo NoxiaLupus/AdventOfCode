@@ -16,16 +16,18 @@ import java.util.logging.Logger;
  */
 public class Main {
     /**
-     * This method is used to run the exercise methods, read the README.md for more informations.
+     * This method is used to run the exercise methods, read the README.md for more information. The task2_1() call runs
+     * the method for the first part of the exercise and the task2_2() call runs the method for the second part.
      * @param args
      */
     public static void main(String[] args) {
         task2_1();
+        task2_2();
     }
 
     /**
      * This method contains all commands that are needed to calculate the multiplication of the depth and the
-     * horizontal values of the submarine
+     * horizontal values of the submarine. It prints the result.
      */
     private static void task2_1() {
         int multipliedValue;
@@ -34,6 +36,19 @@ public class Main {
         MovingSubmarine move = new MovingSubmarine();
         multipliedValue = move.multiplyCommands(commands);
         System.out.println("The depth and horizontal values multiplied are " + multipliedValue);
+    }
+
+    /**
+     * This method contains all commands to calculate the multiplication of the depth and the horizontal values in
+     * consideration of the aim. It prints the result.
+     */
+    private static void task2_2() {
+        int multipliedValue;
+        List<String[]> commands;
+        commands = getMeasurementsValues();
+        MovingSubmarine move = new MovingSubmarine();
+        multipliedValue = move.multiplyCommandsWithAim(commands);
+        System.out.println("The new multiplied value is: " + multipliedValue);
     }
 
     /**
