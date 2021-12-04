@@ -1,5 +1,6 @@
 package day3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,5 +43,45 @@ public class PowerConsumption {
         epsilon = Integer.parseInt(epsilonRate, 2);
         result = gamma * epsilon;
         return result;
+    }
+
+    /**
+     * This method calculates the rating of a gas.
+     * @param report List with Strings from the diagnostic report
+     * @param name of the searched gas
+     * @return value of the searched gas
+     */
+    public int calculateGasRating(List<String> report, String name) {
+        String ratingCode = "";
+        for (int i = 0; i < report.get(0).length(); i++) {
+            int ones = 0, zeros = 0;
+            for (String number : report) {
+                if (number.charAt(i) == '1') {
+                    ones++;
+                } else if (number.charAt(i) == '0') {
+                    zeros++;
+                }
+            }
+            List<String> newReport = new ArrayList<>();
+            for (String values : report) {
+                if (ones >= zeros) {
+                    if ((name.equals("Oxygen") && values.charAt(i) == '1') ||
+                            (name.equals("CO2") && values.charAt(i) == '0')) {
+                        newReport.add(values);
+                    }
+                } else {
+                        if ((name.equals("Oxygen") && values.charAt(i) == '0') ||
+                                (name.equals("CO2") && values.charAt(i) == '1')) {
+                            newReport.add(values);
+                        }
+                    }
+                }
+            report = newReport;
+            if (report.size() == 1) {
+                ratingCode = report.get(0);
+                break;
+            }
+        }
+        return Integer.parseInt(ratingCode,2);
     }
 }

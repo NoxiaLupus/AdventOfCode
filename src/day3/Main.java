@@ -22,6 +22,7 @@ public class Main {
      */
     public static void main(String[] args) {
         task3_1();
+        task3_2();
     }
 
     /**
@@ -34,6 +35,21 @@ public class Main {
 
         report = getReportValues();
         result = power.getRates(report);
+        System.out.println(result);
+    }
+
+    /**
+     * This method contains all important method calls to get the calculation of the life support rating.
+     */
+    private static void task3_2() {
+        int result, oxygen, carbonDioxide;
+        PowerConsumption power = new PowerConsumption();
+        List<String> report;
+
+        report = getReportValues();
+        oxygen = power.calculateGasRating(report, "Oxygen");
+        carbonDioxide = power.calculateGasRating(report, "CO2");
+        result = oxygen * carbonDioxide;
         System.out.println(result);
     }
 
