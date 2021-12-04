@@ -67,7 +67,4 @@ In the above example, the sum of each three-measurement window is as follows:
 
 Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
 
-
-[source](https://adventofcode.com/2021/day/1#part2)
-
 [source](https://adventofcode.com/2021/day/1)
