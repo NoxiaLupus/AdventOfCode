@@ -20,6 +20,7 @@ public class Main {
      * If you want to run the first exercise from the Advent of Code, you have to use the task1_1() and if you want
      * to run the second exercise from day 1 you have to run the task1_2(). Look at the README.md for more
      * information about the exercises
+     * @param args
      */
     public static void main(String[] args) {
         task1_1();
