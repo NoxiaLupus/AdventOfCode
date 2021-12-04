@@ -65,6 +65,6 @@ In the above example, the sum of each three-measurement window is as follows:
 > G: 769 (increased) <br>
 > H: 792 (increased) <br>
 
-Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
+Consider sums of a three-measurement sliding window. **How many sums are larger than the previous sum?**
 
 [source](https://adventofcode.com/2021/day/1)
